@@ -1,0 +1,21 @@
+<h1>Register Page</h1>
+<form action="{% url 'users:saveuser' %}" method="post">
+  {% csrf_token %}
+    <label>First Name: </label><br>
+    <input type="text" id="first_name" name="first_name"><br><br>
+    <label>Last Name: </label><br>
+    <input type="text" id="last_name" name="last_name"><br><br>
+    <label>Email id: </label><br>
+    <input type="email" id="email" name="email"><br><br>
+    <label>Password: </label><br>
+    <input type="password" id="password" name="password"><br><br>
+    <label>Mobile No: </label><br>
+    <input type="text" id="mobile_no" name="mobile_no"><br><br>
+    <label>Date of Birth: </label><br>
+    <input type="text" id="date_of_birth" name="date_of_birth"><br><br>
+    <label>Age: </label><br>
+    <input type="text" id="age" name="age"><br><br>
+    <label>Country: </label><br>
+    <input type="text" id="country" name="country"><br><br>
+    <input type="submit" value="Register"><br><br>
+</form>

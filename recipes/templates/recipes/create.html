@@ -1,0 +1,25 @@
+<div style="text-align: right">
+<a href="{% url 'users:logoutpage' %}">Logout</a>
+</div>
+<div style="text-align: center">
+<h1>Create Recipe</h1>
+</div>
+{% if error_message %}
+   <p><strong>{{ error_message }}</strong></p>
+{% endif %}
+
+<form action="{% url 'recipes:save' %}" method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="name"><br>
+    <label for="ingredients">Ingredients:</label><br>
+    <input type="text" id="ingredients" name="ingredients"><br>
+    <label for="process">Process:</label><br>
+    <input type="text" id="process" name="process"><br>
+    <label for="recipe_img">Recipe Image:</label><br>
+    <input type="file" id="recipe_img" name="recipe_img"><br><br>
+    <input type="submit" value="Create">
+</form>
+
+
+

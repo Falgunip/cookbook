@@ -1,0 +1,13 @@
+<h1>Login Page</h1>
+{% if message %}
+{{message}}
+{% endif %}
+<form action="{% url 'users:dologin' %}" method="post">
+  {% csrf_token %}
+    <label>Email : </label><br>
+    <input type="text" id="email" name="email"><br><br>
+    <label>Password: </label><br>
+    <input type="password" id="password" name="password"><br><br>
+    <input type="submit" value="Login"><br><br>
+    If New User, than <a href="{% url 'users:register' %}">Register</a> here
+</form>

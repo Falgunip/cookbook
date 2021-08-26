@@ -1,0 +1,17 @@
+<div style="text-align: right">
+<a href="{% url 'users:logoutpage' %}">Logout</a>
+</div>
+<div style="text-align: center">
+<h1>Detail Recipe</h1>
+</div>
+
+{% for r in recipe %}
+       <label><b>Name: </b></label>{{r.name}}<br>
+       <label><b>Ingredients: </b></label>{{r.ingredients}}<br>
+       <label><b>Process: </b></label>{{r.process}}<br>
+       <label><b>Recipe Image: </b></label><br>
+       <img src="/media/{{r.recipe_img}}" style="width:200px;height:200px"><br><br>
+<!--       <img src="{{r.recipe_img.url}}" style="width:200px;height:200px"><br>-->
+{% endfor %}
+<a href="{% url 'recipes:index' %}">Back</a>
+

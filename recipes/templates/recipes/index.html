@@ -1,0 +1,21 @@
+<div style="text-align: right">
+<a href="{% url 'users:logoutpage' %}">Logout</a>
+</div>
+
+<h3>Recipes Names</h3>
+
+{% if name_list %}
+<ul>
+  {% for n in name_list %}
+      <li>
+
+        <a href="{% url 'recipes:detail' n.id %}">{{ n.name }}</a>
+      </li>
+  {% endfor %}
+</ul>
+{% else %}
+   <p>No Recipes are available.</p>
+{% endif %}
+
+<a href="{% url 'recipes:create' %}">Create Recipe</a>
+
